@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Henry">
+<meta name="theme-color" content="#ff7a1a">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="../app/style.css?v=2">
+<title>Henry&rsquo;s Practice</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="../app/engine.js?v=2"></script>
+<script src="../app/gen-k.js?v=2"></script>
+<script>
+KS.start({
+  "kid": "henry",
+  "name": "Henry",
+  "face": "🦖",
+  "young": true,
+  "theme": {
+    "accent": "#ff7a1a",
+    "accent2": "#2bb673",
+    "bg": "#fff8ec"
+  },
+  "minutes": 10,
+  "perRound": 5,
+  "subjects": [
+    {
+      "key": "letters",
+      "label": "Letters & sounds",
+      "icon": "🔤"
+    },
+    {
+      "key": "words",
+      "label": "Words",
+      "icon": "📖"
+    },
+    {
+      "key": "numbers",
+      "label": "Numbers",
+      "icon": "🔢"
+    },
+    {
+      "key": "shapes",
+      "label": "Shapes & patterns",
+      "icon": "🔺"
+    }
+  ],
+  "areas": [
+    {
+      "key": "k-sound",
+      "subject": "letters",
+      "label": "First sounds",
+      "icon": "👂",
+      "type": "gen",
+      "gen": "k.sound",
+      "weight": 3
+    },
+    {
+      "key": "k-letter",
+      "subject": "letters",
+      "label": "Find the letter",
+      "icon": "🅰️",
+      "type": "gen",
+      "gen": "k.letter",
+      "weight": 2
+    },
+    {
+      "key": "k-case",
+      "subject": "letters",
+      "label": "Big & little letters",
+      "icon": "🔠",
+      "type": "gen",
+      "gen": "k.case",
+      "weight": 1.5
+    },
+    {
+      "key": "k-sight",
+      "subject": "words",
+      "label": "Sight words",
+      "icon": "👀",
+      "type": "gen",
+      "gen": "k.sight",
+      "weight": 2
+    },
+    {
+      "key": "k-rhyme",
+      "subject": "words",
+      "label": "Rhymes",
+      "icon": "🎵",
+      "type": "gen",
+      "gen": "k.rhyme",
+      "weight": 2
+    },
+    {
+      "key": "k-syll",
+      "subject": "words",
+      "label": "Clap the word",
+      "icon": "👏",
+      "type": "gen",
+      "gen": "k.syll",
+      "weight": 1.5
+    },
+    {
+      "key": "k-cvc",
+      "subject": "words",
+      "label": "Read words",
+      "icon": "📖",
+      "type": "gen",
+      "gen": "k.cvc",
+      "weight": 0.5
+    },
+    {
+      "key": "k-count",
+      "subject": "numbers",
+      "label": "Counting",
+      "icon": "🍎",
+      "type": "gen",
+      "gen": "k.count",
+      "weight": 3
+    },
+    {
+      "key": "k-num",
+      "subject": "numbers",
+      "label": "Find the number",
+      "icon": "🔢",
+      "type": "gen",
+      "gen": "k.num",
+      "weight": 2
+    },
+    {
+      "key": "k-more",
+      "subject": "numbers",
+      "label": "More or fewer",
+      "icon": "⚖️",
+      "type": "gen",
+      "gen": "k.more",
+      "weight": 1.5
+    },
+    {
+      "key": "k-next",
+      "subject": "numbers",
+      "label": "What comes next?",
+      "icon": "➡️",
+      "type": "gen",
+      "gen": "k.next",
+      "weight": 1.5
+    },
+    {
+      "key": "k-add",
+      "subject": "numbers",
+      "label": "Adding",
+      "icon": "➕",
+      "type": "gen",
+      "gen": "k.add",
+      "weight": 1.5
+    },
+    {
+      "key": "k-tens",
+      "subject": "numbers",
+      "label": "Count by tens",
+      "icon": "🔟",
+      "type": "gen",
+      "gen": "k.tens",
+      "weight": 0.5
+    },
+    {
+      "key": "k-shape",
+      "subject": "shapes",
+      "label": "Shapes",
+      "icon": "🔺",
+      "type": "gen",
+      "gen": "k.shape",
+      "weight": 2
+    },
+    {
+      "key": "k-pattern",
+      "subject": "shapes",
+      "label": "Patterns",
+      "icon": "🔴",
+      "type": "gen",
+      "gen": "k.pattern",
+      "weight": 2
+    }
+  ],
+  "today": {
+    "plan": [
+      "letters",
+      "numbers",
+      "words",
+      "shapes|numbers"
+    ]
+  },
+  "stickers": [
+    "🐶",
+    "🦖",
+    "🐱",
+    "🦁",
+    "🐸",
+    "🐵",
+    "🐧",
+    "🐢",
+    "🦒",
+    "🐘",
+    "🦕",
+    "🐙",
+    "🦈",
+    "🐝",
+    "🦋",
+    "🐞",
+    "🐯",
+    "🐼",
+    "🦄",
+    "🐳"
+  ],
+  "stickerEvery": 15
+});
+</script>
+</body>
+</html>

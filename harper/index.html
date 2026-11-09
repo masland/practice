@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Harper">
+<meta name="theme-color" content="#7b4ce0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="../app/style.css?v=2">
+<title>Harper&rsquo;s Practice</title>
+</head>
+<body>
+<div id="app"></div>
+<script src="../app/engine.js?v=2"></script>
+<script src="../app/gen-math6.js?v=2"></script>
+<script src="../app/bank-ela.js?v=2"></script>
+<script src="../app/bank-reading.js?v=2"></script>
+<script src="../app/bank-scisoc.js?v=2"></script>
+<script>
+KS.start({
+  "kid": "harper",
+  "name": "Harper",
+  "face": "🦋",
+  "theme": {
+    "accent": "#7b4ce0",
+    "accent2": "#ff7aa8",
+    "bg": "#f8f3ff"
+  },
+  "minutes": 15,
+  "perRound": 5,
+  "subjects": [
+    {
+      "key": "math",
+      "label": "Math",
+      "icon": "➗"
+    },
+    {
+      "key": "science",
+      "label": "Science",
+      "icon": "🔭"
+    },
+    {
+      "key": "words",
+      "label": "Words & Grammar",
+      "icon": "🔤"
+    },
+    {
+      "key": "reading",
+      "label": "Reading",
+      "icon": "📖"
+    },
+    {
+      "key": "writing",
+      "label": "Writing",
+      "icon": "✏️"
+    },
+    {
+      "key": "social",
+      "label": "Social Studies",
+      "icon": "🗺️"
+    }
+  ],
+  "areas": [
+    {
+      "key": "m6-int",
+      "subject": "math",
+      "label": "Integers",
+      "icon": "➖",
+      "type": "gen",
+      "gen": "math6.int",
+      "weight": 3
+    },
+    {
+      "key": "m6-frac",
+      "subject": "math",
+      "label": "Fractions",
+      "icon": "🍕",
+      "type": "gen",
+      "gen": "math6.frac",
+      "weight": 3
+    },
+    {
+      "key": "m6-coord",
+      "subject": "math",
+      "label": "Coordinate plane",
+      "icon": "📍",
+      "type": "gen",
+      "gen": "math6.coord",
+      "weight": 3
+    },
+    {
+      "key": "m6-data",
+      "subject": "math",
+      "label": "Data & graphs",
+      "icon": "📊",
+      "type": "gen",
+      "gen": "math6.data",
+      "weight": 3
+    },
+    {
+      "key": "m6-expr",
+      "subject": "math",
+      "label": "Expressions & equations",
+      "icon": "🧮",
+      "type": "gen",
+      "gen": "math6.expr",
+      "weight": 3
+    },
+    {
+      "key": "m6-ineq",
+      "subject": "math",
+      "label": "Inequalities",
+      "icon": "↔️",
+      "type": "gen",
+      "gen": "math6.ineq",
+      "weight": 2
+    },
+    {
+      "key": "m6-ratio",
+      "subject": "math",
+      "label": "Ratios & rates",
+      "icon": "⚖️",
+      "type": "gen",
+      "gen": "math6.ratio",
+      "weight": 2
+    },
+    {
+      "key": "m6-pct",
+      "subject": "math",
+      "label": "Percents & decimals",
+      "icon": "💯",
+      "type": "gen",
+      "gen": "math6.pct",
+      "weight": 2
+    },
+    {
+      "key": "m6-exp",
+      "subject": "math",
+      "label": "Exponents",
+      "icon": "🚀",
+      "type": "gen",
+      "gen": "math6.exp",
+      "weight": 1.5
+    },
+    {
+      "key": "m6-factors",
+      "subject": "math",
+      "label": "Factors & primes",
+      "icon": "🔢",
+      "type": "gen",
+      "gen": "math6.factors",
+      "weight": 1.5
+    },
+    {
+      "key": "sci-weather",
+      "subject": "science",
+      "label": "Weather",
+      "icon": "⛈️",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "sci-weather",
+      "weight": 3
+    },
+    {
+      "key": "sci-astro",
+      "subject": "science",
+      "label": "Space & the solar system",
+      "icon": "🪐",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "sci-astro",
+      "weight": 3
+    },
+    {
+      "key": "sci-water",
+      "subject": "science",
+      "label": "Water (H2O)",
+      "icon": "💧",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "sci-water",
+      "weight": 1
+    },
+    {
+      "key": "sci-energy",
+      "subject": "science",
+      "label": "Energy",
+      "icon": "⚡",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "sci-energy",
+      "weight": 0.7
+    },
+    {
+      "key": "spell-list",
+      "subject": "words",
+      "label": "This week’s spelling",
+      "icon": "📝",
+      "type": "spell-list",
+      "weight": 3
+    },
+    {
+      "key": "vocab-list",
+      "subject": "words",
+      "label": "This week’s vocabulary",
+      "icon": "📒",
+      "type": "vocab-list",
+      "weight": 3
+    },
+    {
+      "key": "conv",
+      "subject": "words",
+      "label": "Grammar & punctuation",
+      "icon": "✍️",
+      "type": "bank",
+      "bank": "ela",
+      "skill": "conventions",
+      "weight": 3
+    },
+    {
+      "key": "context",
+      "subject": "words",
+      "label": "Context clues",
+      "icon": "🔍",
+      "type": "bank",
+      "bank": "ela",
+      "skill": "context",
+      "weight": 2
+    },
+    {
+      "key": "roots",
+      "subject": "words",
+      "label": "Word roots",
+      "icon": "🌱",
+      "type": "bank",
+      "bank": "ela",
+      "skill": "roots",
+      "weight": 2
+    },
+    {
+      "key": "figurative",
+      "subject": "words",
+      "label": "Figurative language",
+      "icon": "🎭",
+      "type": "bank",
+      "bank": "ela",
+      "skill": "figurative",
+      "weight": 1.5
+    },
+    {
+      "key": "spelling",
+      "subject": "words",
+      "label": "Spelling patterns",
+      "icon": "🐝",
+      "type": "spelling",
+      "weight": 1.5
+    },
+    {
+      "key": "reading",
+      "subject": "reading",
+      "label": "Read & answer",
+      "icon": "📖",
+      "type": "passage",
+      "weight": 1
+    },
+    {
+      "key": "writing",
+      "subject": "writing",
+      "label": "Daily writing",
+      "icon": "✏️",
+      "type": "writing",
+      "weight": 1
+    },
+    {
+      "key": "ss-geo",
+      "subject": "social",
+      "label": "Maps & geography",
+      "icon": "🧭",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "ss-geo",
+      "weight": 2.5
+    },
+    {
+      "key": "ss-africa",
+      "subject": "social",
+      "label": "West African empires",
+      "icon": "🐪",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "ss-africa",
+      "weight": 2
+    },
+    {
+      "key": "ss-explore",
+      "subject": "social",
+      "label": "European exploration",
+      "icon": "⛵",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "ss-explore",
+      "weight": 2
+    },
+    {
+      "key": "ss-colonial",
+      "subject": "social",
+      "label": "Colonial America",
+      "icon": "🏘️",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "ss-colonial",
+      "weight": 2
+    },
+    {
+      "key": "ss-indig",
+      "subject": "social",
+      "label": "Indigenous peoples",
+      "icon": "🌎",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "ss-indig",
+      "weight": 1
+    },
+    {
+      "key": "ss-civics",
+      "subject": "social",
+      "label": "Citizenship & sources",
+      "icon": "📜",
+      "type": "bank",
+      "bank": "scisoc",
+      "skill": "ss-civics",
+      "weight": 0.7
+    }
+  ],
+  "today": {
+    "plan": [
+      "math",
+      "science",
+      "math",
+      "words",
+      "reading|writing|social"
+    ]
+  },
+  "stickers": [
+    "🦋",
+    "🎨",
+    "🎤",
+    "🩰",
+    "🌸",
+    "🦄",
+    "🎬",
+    "🌈",
+    "🐬",
+    "🎧",
+    "🌻",
+    "🦊",
+    "🎹",
+    "🐼",
+    "🍓",
+    "🌙",
+    "💎",
+    "🐢",
+    "🎀",
+    "🌟"
+  ],
+  "stickerEvery": 25
+});
+</script>
+</body>
+</html>
