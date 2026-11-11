@@ -140,8 +140,12 @@
         else { x1 = min; x2 = max; y1 = l.m * min + l.b; y2 = l.m * max + l.b; }
         s += `<line clip-path="url(#pc)" x1="${X(x1)}" y1="${Y(y1)}" x2="${X(x2)}" y2="${Y(y2)}" stroke="${l.color || '#6c4cf0'}" stroke-width="3"/>`;
       });
+      (o.curves || []).forEach(c => {
+        s += `<polyline clip-path="url(#pc)" fill="none" stroke="${c.color || '#6c4cf0'}" stroke-width="3" stroke-linejoin="round" points="${c.pts.map(p => X(p[0]).toFixed(1) + ',' + Y(p[1]).toFixed(1)).join(' ')}"/>`;
+      });
       (o.points || []).forEach(p => {
-        s += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="6" fill="${p.color || '#e4572e'}"/>`;
+        const col = p.color || '#e4572e';
+        s += `<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="6" fill="${p.open ? '#fff' : col}" stroke="${col}" stroke-width="${p.open ? 3 : 0}"/>`;
         if (p.label) s += `<text x="${X(p.x) + 9}" y="${Y(p.y) - 8}" font-size="15" font-weight="700" fill="#222">${p.label}</text>`;
       });
       return s + '</svg>';
